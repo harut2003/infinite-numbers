@@ -2,6 +2,9 @@ import MainContextProvider from '@/context/provider';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import Instructions from '@/components/instructions';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +21,18 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <MainContextProvider>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <div className='grid grid-cols-3 min-h-screen'>
+            <div className='col-span-2 flex flex-col'>
+              <Header />
+              {children}
+              <Footer />
+            </div>
+            <div className='col-span-1'>
+              <Instructions />
+            </div>
+          </div>
+        </body>
       </MainContextProvider>
     </html>
   );

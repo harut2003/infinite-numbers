@@ -11,7 +11,10 @@ interface IProps
 export default function PrimaryButton({ children, ...props }: IProps) {
   const { className, ...customProps } = props;
   return (
-    <button className={className || 'p-3 border-black'} {...customProps}>
+    <button
+      className={className || 'p-3 border-2 border-black'}
+      {...customProps}
+    >
       {children}
     </button>
   );
