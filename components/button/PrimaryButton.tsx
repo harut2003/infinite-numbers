@@ -12,7 +12,8 @@ export default function PrimaryButton({ children, ...props }: IProps) {
   const { className, ...customProps } = props;
   return (
     <button
-      className={className || 'p-3 border-2 border-black'}
+      className={`p-3 border-2 border-black transition-all bg-transparent ease-in-out hover:bg-black hover:text-white
+       ${className ? ` ${className}` : ''}`}
       {...customProps}
     >
       {children}

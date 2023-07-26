@@ -23,12 +23,12 @@ export default function RootLayout({
       <MainContextProvider>
         <body className={inter.className}>
           <div className='grid grid-cols-3 min-h-screen'>
-            <div className='col-span-2 flex flex-col'>
+            <div className='col-span-3 md:col-span-2 flex flex-col'>
               <Header />
               {children}
               <Footer />
             </div>
-            <div className='col-span-1'>
+            <div className='hidden md:block col-span-1'>
               <Instructions />
             </div>
           </div>
